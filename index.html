@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bài tập Hàm</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/style.css">
+
+
+</head>
+
+<body>
+    <div class="p-5">
+        <h1 class="text-center py-4 text-success text-uppercase">Bài tập Hàm: JS Function</h1>
+        <!--! Bài tập 1: Quản lý tuyển sinh -->
+        <div class="container p-5 border-success table-bordered">
+            <div class="form">
+                <h3>Bài tập 1: Quản lý tuyển sinh</h3>
+            </div>
+            <form class="row align-items-center">
+                <div class="col-4 my-2">
+                    <input type="number" class="form-control formText" id="diemChuan"
+                        placeholder="Nhập điểm chuẩn của hội đồng">
+                </div>
+                <div class="col-4 my-2">
+                    <select class="form-control formText" name="" id="khuVuc">
+                        <option value=0>Khu vực ưu tiên</option>
+                        <option value=2>A (+2 điểm)</option>
+                        <option value=1>B (+1 Điểm)</option>
+                        <option value=0.5>C (+0.5 Điểm)</option>
+                    </select>
+                </div>
+                <div class="col-4 my-2">
+                    <select class="form-control formText" name="" id="doiTuong">
+                        <option value=0>Chọn đối tượng</option>
+                        <option value=2.5>1 (+2.5 điểm)</option>
+                        <option value=1.5>2 (+1.5 Điểm)</option>
+                        <option value=1>3 (+1 Điểm)</option>
+                    </select>
+                </div>
+
+                <div class="col-4 my-2">
+                    <input type="number" class="form-control formText" id="diem1" placeholder="Điểm môn thứ 1">
+                </div>
+                <div class="col-4 my-2">
+                    <input type="number" class="form-control formText" id="diem2" placeholder="Điểm môn thứ 2">
+                </div>
+                <div class="col-4 my-2">
+                    <input type="number" class="form-control formText" id="diem3" placeholder="Điểm môn thứ 3">
+                </div>
+
+                <div class="col-12 py-2">
+                    <button class="btn btn-success m-2" type="button" id="btnKetQuaDiem">Kiểm tra kết quả</button>
+                </div>
+
+                <div class="col-12 py-2 alert alert-success" role="alert">
+                    Kết quả: <span id="ketQuaDiem"></span>
+                </div>
+            </form>
+        </div>
+
+        <!--! Bài tập 2: Tính tiền điện -->
+        <div class="container p-5 border-success table-bordered">
+            <div class="form">
+                <h3>Bài tập 2: Tính tiền điện</h3>
+            </div>
+            <div class="row py-3 align-items-center">
+                <div class="col-12 py-2">
+                    <input type="number" class="form-control" id="nhapKw" placeholder="Nhập số KW">
+                </div>
+                <div class="col-12 py-2">
+                    <button class="btn btn-success" role="alert" type="button" id="tinhTienDien">Tính tiền điện</button>
+                </div>
+                <div class="col-12 py-2 alert alert-success" role="alert">
+                    Kết quả: <span id="ketQuaTienDien"></span>
+                </div>
+            </div>
+        </div>
+
+        <!--! Bài tập 3: Tính thuế thu nhập cá nhân  -->
+        <div class="container p-5 border-success table-bordered">
+            <div class="form">
+                <h3>Bài tập 3: Tính thuế thu nhập cá nhân</h3>
+            </div>
+            <form class="row py-2 align-items-center">
+                <div class="col-12 py-2">
+                    <input type="number" class="form-control" id="thuNhapNam" placeholder="Tổng thu nhập năm:">
+                </div>
+                <div class="col-12 py-2">
+                    <input type="number" class="form-control" id="soNguoi" placeholder="Số người phụ thuộc:">
+                </div>
+                <div class="col-12 py-2">
+                    <button class="btn btn-success" role="alert" type="button" id="tinhTienThue">Tính tiền thuế</button>
+                </div>
+                <div class="col-12 py-2 alert alert-success" role="alert">
+                    Kết quả: <span id="ketQuaTienThue"></span>
+                </div>
+            </form>
+        </div>
+
+
+        <!--! Bài tập 4: Tính tiền cap -->
+        <div class="container p-5 border-success table-bordered">
+            <div class="form">
+                <h3>Bài tập 4: Tính tiền cáp</h3>
+            </div>
+            <form class="row py-3 align-items-center">
+                <div class="col-3">
+                    <select class="form-control" id="loaiKhachHang" onchange="tinhTienCap">
+                        <option value="">Chọn loại khách hàng</option>
+                        <option value="nhaDan">Nhà dân</option>
+                        <option value="doanhNghiep">Doanh nghiệp</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control" id="maKhachHang" placeholder="Nhập mã khách hàng:">
+                </div>
+                <div class="col-3">
+                    <input type="number" class="form-control" id="soKenh" placeholder="Số kênh cao cấp:">
+                </div>
+                <div class="col-3">
+                    <input type="number" class="form-control" id="soKetNoi" placeholder="Số kết nối:">
+                </div>
+                <div class="col-12 py-3">
+                    <button class="btn btn-success" role="alert" type="button" id="tinhTienCap">Tính tiền cáp</button>
+                </div>
+                <div class="col-12 py-2 alert alert-success" role="alert">
+                    Kết quả: <span id="ketQuaTienCap"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="./JS/main.js"></script>
+</body>
+
+</html>
