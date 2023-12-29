@@ -69,15 +69,12 @@ function hideInput() {
     document.getElementById('soKetNoi').style.display = 'doanhNghiep' == loaiKhachHang ? 'block' : 'none'
 }
 
-
 document.getElementById('tinhTienCap').onclick = function () {
-
     // Input
     var loaiKhachHang = document.getElementById("loaiKhachHang").value;
     var maKhachHang = document.getElementById("maKhachHang").value;
     var soKenh = document.getElementById("soKenh").value;
     var soKetNoi = document.getElementById("soKetNoi").value;
-
 
     // Progress
     ketQuaTienCap = 0;
@@ -88,6 +85,4 @@ document.getElementById('tinhTienCap').onclick = function () {
 
     // Output
     document.getElementById("ketQuaTienCap").innerHTML = "Mã khách hàng: " + maKhachHang + "; Tiền cáp: " + new Intl.NumberFormat("en-US",{ style: "currency", currency: "USD" }).format(ketQuaTienCap)
-
-
 }
